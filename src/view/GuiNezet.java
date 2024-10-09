@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class GuiNezet {
     
-    public int dontes(String uzenet){
+    public int dontes(){
         String[] options = { "választott ajtó", "másik ajtó"};
         int valasztas = JOptionPane.showOptionDialog(null, "Az egyik zárt ajtó biztosan kecskét rejt, szeretnéd megváltoztatni a döntésed? :", "Dönts!",0, 2, null, options, options[0]);
         return valasztas;

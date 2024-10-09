@@ -4,6 +4,9 @@
  */
 package ajtoFeladat;
 
+import controller.GuiController;
+
+
 /**
  *
  * @author HalászGergő(SZF_2023
@@ -66,10 +69,25 @@ public class AjtoGUI extends javax.swing.JFrame {
         lblElsoAjto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ajtoFeladat/kepek/kicsi_11zon.png"))); // NOI18N
 
         btnElsoGomb.setText("Ezt nyitom!");
+        btnElsoGomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElsoGombActionPerformed(evt);
+            }
+        });
 
         btnMasodikGomb.setText("Ezt nyitom!");
+        btnMasodikGomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMasodikGombActionPerformed(evt);
+            }
+        });
 
         btnHarmadikGomb.setText("Ezt nyitom!");
+        btnHarmadikGomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHarmadikGombActionPerformed(evt);
+            }
+        });
 
         lblCsereNelkul.setText("Nyert körök csere nélkül:");
 
@@ -177,6 +195,21 @@ public class AjtoGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnMasodikGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasodikGombActionPerformed
+        int kivalasztott = 1;
+        ajtoKivalasztas(kivalasztott);
+    }//GEN-LAST:event_btnMasodikGombActionPerformed
+
+    private void btnHarmadikGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHarmadikGombActionPerformed
+        int kivalasztott = 2;
+        ajtoKivalasztas(kivalasztott);
+    }//GEN-LAST:event_btnHarmadikGombActionPerformed
+
+    private void btnElsoGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElsoGombActionPerformed
+        int kivalasztott = 0;
+        ajtoKivalasztas(kivalasztott);
+    }//GEN-LAST:event_btnElsoGombActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,4 +264,9 @@ public class AjtoGUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblHarmadikAjto;
     private javax.swing.JLabel lblMasodikAjto;
     // End of variables declaration//GEN-END:variables
+
+    private void ajtoKivalasztas(int kivalasztott) {
+        //GuiController.nezet.dontes();
+        
+    }
 }

@@ -191,16 +191,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ezt nyitom!"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnElsoGombActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnMasodikGomb">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ezt nyitom!"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMasodikGombActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnHarmadikGomb">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ezt nyitom!"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHarmadikGombActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCsereNelkul">
       <Properties>
