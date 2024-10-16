@@ -5,6 +5,10 @@
 package ajtoFeladat;
 
 import controller.GuiController;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 
 
 /**
@@ -69,25 +73,10 @@ public class AjtoGUI extends javax.swing.JFrame {
         lblElsoAjto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ajtoFeladat/kepek/kicsi_11zon.png"))); // NOI18N
 
         btnElsoGomb.setText("Ezt nyitom!");
-        btnElsoGomb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnElsoGombActionPerformed(evt);
-            }
-        });
 
         btnMasodikGomb.setText("Ezt nyitom!");
-        btnMasodikGomb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMasodikGombActionPerformed(evt);
-            }
-        });
 
         btnHarmadikGomb.setText("Ezt nyitom!");
-        btnHarmadikGomb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHarmadikGombActionPerformed(evt);
-            }
-        });
 
         lblCsereNelkul.setText("Nyert körök csere nélkül:");
 
@@ -195,20 +184,46 @@ public class AjtoGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMasodikGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasodikGombActionPerformed
-        int kivalasztott = 1;
-        ajtoKivalasztas(kivalasztott);
-    }//GEN-LAST:event_btnMasodikGombActionPerformed
+    public JButton getBtnElsoGomb() {
+        return btnElsoGomb;
+    }
 
-    private void btnHarmadikGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHarmadikGombActionPerformed
-        int kivalasztott = 2;
-        ajtoKivalasztas(kivalasztott);
-    }//GEN-LAST:event_btnHarmadikGombActionPerformed
+    public JButton getBtnHarmadikGomb() {
+        return btnHarmadikGomb;
+    }
 
-    private void btnElsoGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElsoGombActionPerformed
-        int kivalasztott = 0;
-        ajtoKivalasztas(kivalasztott);
-    }//GEN-LAST:event_btnElsoGombActionPerformed
+    public JButton getBtnJatekVege() {
+        return btnJatekVege;
+    }
+
+    public JButton getBtnMasodikGomb() {
+        return btnMasodikGomb;
+    }
+
+    public JButton getBtnUjJatek() {
+        return btnUjJatek;
+    }
+    public int dontes(){
+        String[] options = { "választott ajtó", "másik ajtó"};
+        int valasztas = JOptionPane.showOptionDialog(null, "Az egyik zárt ajtó biztosan kecskét rejt, szeretnéd megváltoztatni a döntésed? :", "Dönts!",0, 2, null, options, options[0]);
+        return valasztas;
+    }
+    public void osszesito(int jatekokSzama, int cserekSzama, int nemCserekSzama){
+        JOptionPane.showMessageDialog(null, "Összes játék száma: "+jatekokSzama+"\nNyert körök amikben cseréltél: "+cserekSzama+"\nCsere nélküli nyert körök: "+nemCserekSzama);
+    }
+    public void kiiratas(String kimenet){
+        JOptionPane.showMessageDialog(rootPane, kimenet);
+    }
+
+    public JSpinner getSpnCsereNelkul() {
+        return SpnCsereNelkul;
+    }
+
+    public JSpinner getSpnCserevel() {
+        return SpnCserevel;
+    }
+
+    
 
     /**
      * @param args the command line arguments
@@ -238,11 +253,7 @@ public class AjtoGUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AjtoGUI().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
