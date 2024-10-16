@@ -4,12 +4,9 @@
  */
 package ajtoFeladat;
 
-import controller.GuiController;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
-
 
 /**
  *
@@ -203,15 +200,18 @@ public class AjtoGUI extends javax.swing.JFrame {
     public JButton getBtnUjJatek() {
         return btnUjJatek;
     }
-    public int dontes(){
-        String[] options = { "választott ajtó", "másik ajtó"};
-        int valasztas = JOptionPane.showOptionDialog(null, "Az egyik zárt ajtó biztosan kecskét rejt, szeretnéd megváltoztatni a döntésed? :", "Dönts!",0, 2, null, options, options[0]);
+
+    public int dontes() {
+        String[] options = {"választott ajtó", "másik ajtó"};
+        int valasztas = JOptionPane.showOptionDialog(null, "Az egyik zárt ajtó biztosan kecskét rejt, szeretnéd megváltoztatni a döntésed? :", "Dönts!", 0, 2, null, options, options[0]);
         return valasztas;
     }
-    public void osszesito(int jatekokSzama, int cserekSzama, int nemCserekSzama){
-        JOptionPane.showMessageDialog(null, "Összes játék száma: "+jatekokSzama+"\nNyert körök amikben cseréltél: "+cserekSzama+"\nCsere nélküli nyert körök: "+nemCserekSzama);
+
+    public void osszesito(int jatekokSzama, int cserekSzama, int nemCserekSzama) {
+        JOptionPane.showMessageDialog(null, "Összes játék száma: " + jatekokSzama + "\nNyert körök amikben cseréltél: " + cserekSzama + "\nCsere nélküli nyert körök: " + nemCserekSzama);
     }
-    public void kiiratas(String kimenet){
+
+    public void kiiratas(String kimenet) {
         JOptionPane.showMessageDialog(rootPane, kimenet);
     }
 
@@ -222,8 +222,6 @@ public class AjtoGUI extends javax.swing.JFrame {
     public JSpinner getSpnCserevel() {
         return SpnCserevel;
     }
-
-    
 
     /**
      * @param args the command line arguments
@@ -253,7 +251,6 @@ public class AjtoGUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -276,8 +273,4 @@ public class AjtoGUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblMasodikAjto;
     // End of variables declaration//GEN-END:variables
 
-    private void ajtoKivalasztas(int kivalasztott) {
-        //GuiController.nezet.dontes();
-        
-    }
 }

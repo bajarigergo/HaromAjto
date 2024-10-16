@@ -35,23 +35,19 @@ public class JatekModell {
 
     }
 
-    public boolean[] getAjtok() {
-        return ajtok;
-    }
-
     public int getSzam() {
         return szam;
     }
 
-    public void novelJatekokSzama(int jatekokSzama) {
+    public void novelJatekokSzama() {
         this.jatekokSzama++;
     }
 
-    public void novelCserekSzama(int cserekSzama) {
+    public void novelCserekSzama() {
         this.cserekSzama++;
     }
 
-    public void novelNemCserekSzama(int nemCserekSzama) {
+    public void novelNemCserekSzama() {
         this.nemCserekSzama++;
     }
 

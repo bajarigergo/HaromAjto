@@ -2,7 +2,6 @@ package controller;
 
 import ajtoFeladat.AjtoGUI;
 import javax.swing.JButton;
-import javax.swing.JSpinner;
 import model.JatekModell;
 
 public class GuiController {
@@ -15,46 +14,44 @@ public class GuiController {
         this.nezet = new AjtoGUI();
 
         guiBeallitas();
-        esemenykezlesekMeghivasa();
-        jatekUjrakezdese();
+        esemenyKezelo();
     }
 
-    private void esemenykezlesekMeghivasa() {
-
+    private void esemenyKezelo() {
         JButton gomb;
 
         gomb = nezet.getBtnElsoGomb();
-        valasztasEsemenykezeles(gomb, 0);
+        valasztasEsemeny(gomb, 0);
 
         gomb = nezet.getBtnMasodikGomb();
-        valasztasEsemenykezeles(gomb, 1);
+        valasztasEsemeny(gomb, 1);
 
         gomb = nezet.getBtnHarmadikGomb();
-        valasztasEsemenykezeles(gomb, 2);
+        valasztasEsemeny(gomb, 2);
 
+        jatekUjrakezdese();
         jatekVege();
-
     }
 
-    private void valasztasEsemenykezeles(JButton gomb, int ajtoSzam) {
+    private void valasztasEsemeny(JButton gomb, int ajtoSzam) {
         gomb.addActionListener(e -> {
             int valasztas = nezet.dontes();
             if (ajtoSzam == modell.getSzam()) {
                 if (valasztas == 0) {
                     nezet.kiiratas("Gratulálok nyertél egy autót");
-                    modell.novelNemCserekSzama(modell.getNemCserekSzama());
-                    modell.novelJatekokSzama(modell.getJatekokSzama());
+                    modell.novelNemCserekSzama();
+                    modell.novelJatekokSzama();
                 } else {
-                    modell.novelJatekokSzama(ajtoSzam);
+                    modell.novelJatekokSzama();
                     nezet.kiiratas("Kecske volt az általad nyitott ajtó mögött");
                 }
             } else {
                 if (valasztas == 1) {
                     nezet.kiiratas("Gratulálok nyertél egy autót");
-                    modell.novelCserekSzama(modell.getCserekSzama());
-                    modell.novelJatekokSzama(modell.getJatekokSzama());
+                    modell.novelCserekSzama();
+                    modell.novelJatekokSzama();
                 } else {
-                    modell.novelJatekokSzama(ajtoSzam);
+                    modell.novelJatekokSzama();
                     nezet.kiiratas("Kecske volt az általad nyitott ajtó mögött");
                 }
             }
